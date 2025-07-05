@@ -12,8 +12,8 @@ const Resume = () => {
   const experience = [
     {
       title: 'Junior Web Developer',
-      company: 'Freelance / Short-Term Role',
-      location: 'Remote',
+      company: 'Roi Minds',
+      location: 'Mohali',
       period: 'June 2025 – July 2025',
       description: [
         'Worked on website customization and e-commerce setup using platforms like Shopify and WordPress',
