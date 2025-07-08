@@ -48,7 +48,7 @@ const Projects = () => {
     },
     {
       title: 'UniTalk – Real-Time University Chat & Video Platform',
-      description: 'Built a scalable and secure communication platform for students from 20+ universities to connect via real-time text and video chat. Implemented student ID-based login, integrated WebRTC for smooth video calls, and used Socket.io for real-time messaging. Achieved full mobile compatibility and a 40% improvement in user error handling through form validations and UX enhancements.',
+      description: 'A student communication platform with real-time text and video chat using WebRTC and Socket.io. Included student ID login, full mobile support, and 40% better error handling through smart validations and UX improvements.',
       image: 'unitalk.png',
       tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'WebRTC'],
       github: 'https://github.com/aryan20151/video-call-app',
