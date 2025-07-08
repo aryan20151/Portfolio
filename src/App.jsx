@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './contexts/ThemeContext';
-
+import RotatingLoader from './components/RotatingLoader'; 
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,20 +28,16 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-dark-900 text-gray-900 dark:text-white transition-colors duration-300">
         <CustomCursor />
-        
+
         <AnimatePresence mode="wait">
           {isLoading ? (
             <motion.div
               key="loader"
-              className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-dark-900"
+              className="fixed inset-0 z-50"
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.div
-                className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-              />
+              <RotatingLoader /> 
             </motion.div>
           ) : (
             <motion.div
