@@ -39,7 +39,7 @@ const Projects = () => {
     },
     {
       title: 'Tic‑Tac‑Toe Web App',
-      description: 'A classic two-player Tic‑Tac‑Toe with vibrant animations and real-time win/tie detection.',
+      description: 'An advanced two-player Tic‑Tac‑Toe game featuring dynamic board size and custom win conditions chosen by players. Includes smooth animations, real-time win/tie detection logic, and a clean, interactive UI for enhanced user engagement.',
       image: 'Tic-Tac-Toe.png',
       tech: ['React', 'Custom CSS'],
       github: 'https://github.com/aryan20151/Tic-Tac-Toe-Advanced',
