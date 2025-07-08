@@ -11,13 +11,13 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'UniTalk – Real-Time University Chat & Video Platform',
-      description: 'Built a scalable and secure communication platform for students from 20+ universities to connect via real-time text and video chat. Implemented student ID-based login, integrated WebRTC for smooth video calls, and used Socket.io for real-time messaging. Achieved full mobile compatibility and a 40% improvement in user error handling through form validations and UX enhancements.',
-      image: 'unitalk.png',
-      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'WebRTC'],
-      github: 'https://github.com/aryan20151/video-call-app',
-      demo: 'https://modern-meet.vercel.app',
-      featured: true,
+      title: 'Real-Time Chat Application',
+      description: 'A responsive chat application built using React and Socket.io enabling instant messaging with real-time WebSocket communication, dynamic user avatars, and styled message alignment for sender and receiver.',
+      image: 'ChatApp.png',
+      tech: ['React', 'Socket.io', 'Express', 'Node.js', 'CSS'],
+      github: 'https://github.com/aryan20151/ChatApp-React', 
+      demo: 'chatapp-ek9c.onrender.com',       
+      featured: true
     },
     {
       title: 'WorkWise – Job & Freelance Portal',
@@ -44,7 +44,16 @@ const Projects = () => {
       tech: ['React', 'Custom CSS'],
       github: 'https://github.com/aryan20151/Tic-Tac-Toe-Advanced',
       demo: 'https://tictactoearyan.vercel.app/',
-      featured: false,
+      featured: true,
+    },
+    {
+      title: 'UniTalk – Real-Time University Chat & Video Platform',
+      description: 'Built a scalable and secure communication platform for students from 20+ universities to connect via real-time text and video chat. Implemented student ID-based login, integrated WebRTC for smooth video calls, and used Socket.io for real-time messaging. Achieved full mobile compatibility and a 40% improvement in user error handling through form validations and UX enhancements.',
+      image: 'unitalk.png',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'WebRTC'],
+      github: 'https://github.com/aryan20151/video-call-app',
+      demo: 'https://modern-meet.vercel.app',
+      featured: true,
     },
     {
       title: 'Crypto Tracker App',
@@ -55,6 +64,7 @@ const Projects = () => {
       demo: 'https://crypto-tracker-aryan.vercel.app/',
       featured: false,
     },
+
   ];
 
   const containerVariants = {
