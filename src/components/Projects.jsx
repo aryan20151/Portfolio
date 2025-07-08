@@ -48,9 +48,9 @@ const Projects = () => {
     },
     {
       title: 'UniTalk – Real-Time University Chat & Video Platform',
-      description: 'A student communication platform with real-time text and video chat using WebRTC and Socket.io. Included student ID login, full mobile support, and 40% better error handling through smart validations and UX improvements.',
+      description: 'A student communication platform with real-time text and video chat using WebRTC and Socket.io. Included student ID login, full mobile support, and better error handling through smart validations and UX improvements.',
       image: 'unitalk.png',
-      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'WebRTC'],
+      tech: ['HTML', 'CSS','Tailwind CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'WebRTC'],
       github: 'https://github.com/aryan20151/video-call-app',
       demo: 'https://modern-meet.vercel.app',
       featured: true,
