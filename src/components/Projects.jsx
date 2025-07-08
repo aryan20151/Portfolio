@@ -21,7 +21,7 @@ const Projects = () => {
     },
     {
       title: 'WorkWise – Job & Freelance Portal',
-      description: 'Developed a job and freelance platform allowing users to explore companies, upload resumes, and apply for opportunities. Built REST APIs, integrated session handling, and created an application cart system to manage user applications. Ensured file security using Multer and maintained MongoDB-based data structure for high-performance querying.',
+      description: 'A job and freelance platform built with REST APIs, allowing users to explore companies, upload resumes, and apply to jobs. Included session handling, application cart system, Multer for file uploads, and MongoDB for efficient data queries.',
       image: 'Workwise.png',
       tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'EJS', 'Multer', 'Bootstrap'],
       github: 'https://github.com/aryan20151/Workwise',
