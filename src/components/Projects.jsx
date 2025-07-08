@@ -16,7 +16,7 @@ const Projects = () => {
       image: 'ChatApp.png',
       tech: ['React', 'Socket.io', 'Express', 'Node.js', 'CSS'],
       github: 'https://github.com/aryan20151/ChatApp-React', 
-      demo: 'chatapp-ek9c.onrender.com',       
+      demo: 'https://chatapp-ek9c.onrender.com',       
       featured: true
     },
     {
