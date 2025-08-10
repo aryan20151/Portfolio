@@ -11,16 +11,16 @@ const Resume = () => {
 
   const experience = [
     {
-      title: 'Junior Web Developer',
-      company: 'Roi Minds',
+      title: 'Software Intern',
+      company: '5bix It Solutions',
       location: 'Mohali',
-      period: 'June 2025 – July 2025',
+      period: 'Present',
       description: [
-        'Worked on website customization and e-commerce setup using platforms like Shopify and WordPress',
-        'Gained hands-on experience in managing CMS themes and optimizing user interfaces',
-        'Integrated third-party plugins for client websites',
-        'Transitioned to focus on custom full-stack development with Node.js, Express, MongoDB, and real-time applications'
-      ],
+        'Undergoing training in core web development technologies including Git, GitHub, JavaScript, React, and Redux',
+        'Learning to consume and integrate REST APIs for dynamic web applications',
+        'Building a strong foundation in modern front-end development practices',
+        'Collaborating on code version control and workflow management using Git and GitHub'
+      ]
     },
     {
       title: 'Web Development Intern',
@@ -95,17 +95,17 @@ const Resume = () => {
             className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8"
             variants={itemVariants}
           >
-            A comprehensive overview of my professional journey, skills, and achievements 
+            A comprehensive overview of my professional journey, skills, and achievements
             in software development and design.
           </motion.p>
-          
+
           <motion.button
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
             variants={itemVariants}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              // In a real app, this would trigger a download
+
               window.open('/CV React.pdf', '_blank');
             }}
           >
@@ -142,7 +142,7 @@ const Resume = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-primary-600 dark:bg-primary-400 rounded-full" />
-                  
+
                   <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-xl">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
                       <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -153,7 +153,7 @@ const Resume = () => {
                         <span className="text-sm font-medium">{job.period}</span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-4 mb-4 text-gray-600 dark:text-gray-300">
                       <span className="font-medium">{job.company}</span>
                       <div className="flex items-center gap-1">
@@ -161,7 +161,7 @@ const Resume = () => {
                         <span className="text-sm">{job.location}</span>
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-2">
                       {job.description.map((item, itemIndex) => (
                         <li
@@ -206,7 +206,7 @@ const Resume = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-purple-600 dark:bg-purple-400 rounded-full" />
-                  
+
                   <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-xl">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
                       <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -217,7 +217,7 @@ const Resume = () => {
                         <span className="text-sm font-medium">{edu.period}</span>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-4 mb-4 text-gray-600 dark:text-gray-300">
                       <span className="font-medium">{edu.university} {edu.Board}</span>
                       <div className="flex items-center gap-1">
@@ -225,7 +225,7 @@ const Resume = () => {
                         <span className="text-sm">{edu.location}</span>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
                       {edu.description}
                     </p>
@@ -248,7 +248,7 @@ const Resume = () => {
                   'React Js',
                   'Node.js',
                   'MongoDB',
-                  'Socket.io',
+                  'Redux',
                   'Express',
                   'HTML/CSS',
                   'Responsive Design'

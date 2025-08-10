@@ -1,0 +1,15 @@
+/* src/components/RotatingLoader.css */
+
+.rotating-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #191d3e;/* Same red as the image background */
+  height: 100vh;
+  width: 100%;
+}
+
+.rotating-loader-svg {
+  width: 70px;  
+  height: 70px;
+}

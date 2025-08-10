@@ -30,7 +30,7 @@ const Projects = () => {
     },
     {
       title: 'Weather Forecasting Web App',
-      description: 'Created a clean, responsive weather forecasting app using third-party weather APIs. Displayed real-time weather conditions including temperature, humidity, and wind speed based on the user\'s city input. Used async/await functions for data fetching and implemented strong error handling for smoother performance on all devices.',
+      description: 'Built a responsive weather app using third-party APIs to display real-time temperature, humidity, and wind speed based on city input. Leveraged async/await for smooth data fetching and added robust error handling for seamless cross-device performance.',
       image: 'weather.png',
       tech: ['HTML', 'CSS', 'JavaScript', 'Weather API'],
       github: 'https://github.com/aryan20151/weather-forecast-app',
