@@ -29,6 +29,7 @@ function App() {
       <div className="min-h-screen bg-white dark:bg-dark-900 text-gray-900 dark:text-white transition-colors duration-300">
         <CustomCursor />
 
+
         <AnimatePresence mode="wait">
           {isLoading ? (
             <motion.div
@@ -66,3 +67,4 @@ function App() {
 }
 
 export default App;
+
