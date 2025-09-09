@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronLeft, ChevronRight, Award, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Award, ExternalLink, Eye, X } from 'lucide-react';
 
 const Certifications = () => {
   const [ref, inView] = useInView({
@@ -10,6 +10,7 @@ const Certifications = () => {
   });
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCert, setSelectedCert] = useState(null);
 
   const certifications = [
     {
@@ -20,7 +21,6 @@ const Certifications = () => {
       description: 'Professional level certification for designing distributed systems on AWS.',
       credentialUrl: 'https://internshala.com',
     },
-
     {
       title: 'Meta Front-End Developer',
       issuer: 'Meta',
@@ -37,19 +37,13 @@ const Certifications = () => {
       description: 'Validated knowledge in building modern, user-focused web interfaces using latest front-end technologies.',
       credentialUrl: 'https://udemy.com',
     },
-
   ];
 
   const itemsPerPage = 3;
   const totalPages = Math.ceil(certifications.length / itemsPerPage);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % totalPages);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
 
   const getCurrentCertifications = () => {
     const start = currentIndex * itemsPerPage;
@@ -60,9 +54,7 @@ const Certifications = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -71,10 +63,7 @@ const Certifications = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
@@ -88,10 +77,7 @@ const Certifications = () => {
           variants={containerVariants}
           className="text-center mb-16"
         >
-          <motion.h2
-            className="text-4xl sm:text-5xl font-bold mb-6"
-            variants={itemVariants}
-          >
+          <motion.h2 className="text-4xl sm:text-5xl font-bold mb-6" variants={itemVariants}>
             <span className="gradient-text">Certifications</span>
           </motion.h2>
           <motion.p
@@ -146,6 +132,7 @@ const Certifications = () => {
                   whileHover={{ y: -10 }}
                 >
                   <div className="relative overflow-hidden bg-white dark:bg-dark-700 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-dark-600">
+                    
                     {/* Certificate Image */}
                     <div className="relative overflow-hidden h-48">
                       <img
@@ -154,15 +141,24 @@ const Certifications = () => {
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                      
+
                       {/* Award Icon */}
-                      <div className="absolute top-4 right-4">
+                      <div className="absolute top-4 right-4 flex gap-2">
                         <motion.div
                           className="p-2 bg-white/90 rounded-full"
                           whileHover={{ scale: 1.1, rotate: 10 }}
                         >
                           <Award size={20} className="text-yellow-600" />
                         </motion.div>
+
+                        {/* Eye Button (View Certificate) */}
+                        <motion.button
+                          onClick={() => setSelectedCert(cert)}
+                          className="p-2 bg-white/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <Eye size={20} className="text-primary-600" />
+                        </motion.button>
                       </div>
 
                       {/* Date Badge */}
@@ -178,15 +174,13 @@ const Certifications = () => {
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                         {cert.title}
                       </h3>
-                      
                       <p className="text-primary-600 dark:text-primary-400 font-medium mb-3">
                         {cert.issuer}
                       </p>
-                      
                       <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
                         {cert.description}
                       </p>
-                      
+
                       {/* Credential Link */}
                       <motion.a
                         href={cert.credentialUrl}
@@ -223,6 +217,44 @@ const Certifications = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal for Certificate Preview */}
+      <AnimatePresence>
+        {selectedCert && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="relative bg-white dark:bg-dark-800 rounded-2xl p-6 max-w-3xl w-full shadow-xl"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-3 right-3 p-2 bg-gray-200 dark:bg-dark-600 rounded-full hover:bg-gray-300 dark:hover:bg-dark-500 transition"
+              >
+                <X size={20} className="text-gray-800 dark:text-gray-200" />
+              </button>
+
+              {/* Certificate Image */}
+              <img
+                src={selectedCert.image}
+                alt={selectedCert.title}
+                className="w-full h-auto rounded-lg"
+              />
+              <p className="mt-4 text-center text-gray-700 dark:text-gray-300 font-medium">
+                {selectedCert.title} — {selectedCert.issuer}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

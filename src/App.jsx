@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
+
 import { ThemeProvider } from './contexts/ThemeContext';
 import RotatingLoader from './components/RotatingLoader'; 
 
@@ -28,7 +29,6 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-dark-900 text-gray-900 dark:text-white transition-colors duration-300">
         <CustomCursor />
-
 
         <AnimatePresence mode="wait">
           {isLoading ? (
@@ -67,4 +67,3 @@ function App() {
 }
 
 export default App;
-
